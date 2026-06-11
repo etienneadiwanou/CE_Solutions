@@ -27,4 +27,13 @@ class ServiceController extends Controller
         $service->load('category');
         return response()->json($service);
     }
+
+    public function categories()
+{
+    return response()->json(
+        \App\Models\Category::where('is_active', true)
+                            ->orderBy('sort_order')
+                            ->get()
+    );
+}
 }

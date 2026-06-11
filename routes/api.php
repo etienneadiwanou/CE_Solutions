@@ -18,6 +18,7 @@ Route::prefix('auth')->group(function () {
 });
 
 // Services : publics (visibles sans connexion)
+Route::get('categories', [ServiceController::class, 'categories']);
 Route::get('services',       [ServiceController::class, 'index']);
 Route::get('services/{service}', [ServiceController::class, 'show']);
 
